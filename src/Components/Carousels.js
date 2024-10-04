@@ -2,14 +2,16 @@ import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is loaded
 import cimg1 from "../Images/cimg1.avif"
 import cimg3 from "../Images/cimg3.avif"
+import "../App.css"
 import cimg4 from "../Images/simg4.avif"
 import cimg8 from "../Images/cimg8.avif"
+
 function CarouselComponent() {
   return (
     <div >
 
     
-    <Carousel >
+    <Carousel className='carousel_container'>
       <Carousel.Item className='carousel_container_child' >
         <img
           className="d-block w-100"

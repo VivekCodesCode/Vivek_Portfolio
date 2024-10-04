@@ -2,34 +2,36 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import vs_icon from "../Images/vs_icon.png"
+import "../App.css"
 import { Link } from 'react-router-dom';
 function BrandExample() {
   return (
-    <>
-      <Navbar className="bg-body-tertiary">
-        <Container>
+    <div className='navbar_container'>
+      <Navbar className=" navbar_container">
+        <Container className=''>
           <Navbar.Brand href="#home" className='me-auto'>
-            <div className='navbar_content' >
+           <Nav.Link> <div className='navbar_content' >
               <img
                 alt=""
                 src={vs_icon}
                 width="48"
-                height="40"
+                height="35"
                 className="d-inline-block align-top"
                 style={{borderRadius:"20px"}}
               />{' '}
-              VivekSharma
+            <span className='viveks'>VivekS</span>  
             </div>
+            </Nav.Link>
           </Navbar.Brand>
           {/* Adding About Me, Projects, and Contact Me links */}
-          <Nav className="ms-auto">
-            <Nav.Link href="#about">About</Nav.Link>
-            <Nav.Link href="#projects">Projects</Nav.Link>
+          <Nav className="ms-auto navbar_content">
+          <Link to="/" style={{textDecoration:"none"}}>  <Nav.Link className='navbar_content' href="#about">Home</Nav.Link></Link>
+            <Link to="/Projects" style={{textDecoration:"none"}}>  <Nav.Link href="#projects">Projects</Nav.Link></Link>
          <Link to="/Contact" style={{textDecoration:"none"}}>   <Nav.Link href="#contact" style={{textDecoration:"none"}}>Contact </Nav.Link></Link>
           </Nav>
         </Container>
       </Navbar>
-    </>
+    </div>
   );
 }
 

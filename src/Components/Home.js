@@ -11,7 +11,6 @@ function Home(params) {
 <Navbars/>
 <Carousels/>
 <Rivews/>
-<Ratings/>
 </>
     );
 }

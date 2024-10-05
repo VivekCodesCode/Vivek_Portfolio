@@ -43,9 +43,8 @@ function WithHeaderAndQuoteExample() {
     return (
         <>
             <br /><br /><br />
-            <Button variant="primary" onClick={handleShow}>
-                Add Rivew
-            </Button>
+            <button class="button-17" role="button" onClick={handleShow}>Add Rivew+</button>
+<br/><br/>
 
             <Modal style={blur} show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

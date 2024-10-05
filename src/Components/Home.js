@@ -4,6 +4,7 @@ import { Carousel } from "react-bootstrap";
 import Rivews from "./Rivews"
 import Carousels from "./Carousels";
 import Ratings from "./Ratings";
+import Footers from "./Footers";
 function Home(params) {
     return(
         

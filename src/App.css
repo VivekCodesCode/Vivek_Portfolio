@@ -110,5 +110,43 @@
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 .navbar_container{
-  position: sticky !important;
+  
+}
+.navbar_container{
+  background-color:rgb(15, 15, 15);
+ border-radius: 2%;
+ 
+}
+
+.navbar_container {
+ 
+  padding: 1rem 0;
+  position: fixed;
+ 
+  width: 100%;
+  z-index: 1000; /* Ensure it stays on top of other content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
+}
+
+.navbar_content {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.child_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.viveks {
+  
+}
+
+.ms-auto {
+  margin-left: auto !important;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
 }

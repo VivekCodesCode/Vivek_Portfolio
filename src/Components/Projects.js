@@ -23,7 +23,7 @@ function Projects() {
             it using hand gestures.<br /><br />
             <center>
               <button
-                className="button-17"
+                className="button-69"
                 onClick={() => window.open("https://drive.google.com/file/d/1U_4ZjMWq0ycLrDyMDXUdjJr94t_pOrCu/view", "_blank")}
                 role="button"
               >
@@ -47,7 +47,7 @@ function Projects() {
             it using hand gestures.<br /><br />
             <center>
               <button
-                className="button-17"
+                className="button-69"
                 onClick={() => window.open("https://drive.google.com/file/d/1U_4ZjMWq0ycLrDyMDXUdjJr94t_pOrCu/view", "_blank")}
                 role="button"
               >

@@ -13,12 +13,14 @@ const Contact = () => {
   })
   const[display,set_display]=useState("hidden")
   const navigate=useNavigate();
+  const[blur,setblur]=useState({})
   function onchange_listner(params) {
    let {name,value}=params.target;
    set_user_data({...user_data,[name]:value});
   }
   async function onclick_listner(params) {
     set_display("visible");
+    setblur({filter:"blur(8px)",pointerEvents:"none"})
     await axios.post("https://vivek-portfolio-backend.onrender.com/insert_data",user_data).then((res)=>{
       set_display("hidden");
     })
@@ -30,7 +32,7 @@ const Contact = () => {
   return (
     <>
     <Navbars/>
-   <center> <Loader display={display} className="m-auto mt-10" /></center>
+    <Loader display={display} />
     <div className="row ms-auto">
     <center> <div className="col-md-6 col-md-offset-3">
         <form id="msform">
@@ -40,8 +42,9 @@ const Contact = () => {
             <li>Social Profiles</li>
             <li>Account Setup</li>
           </ul>
+          
           {/* Fieldsets */}
-          <fieldset>
+          <fieldset style={blur}>
             <h2 className="fs-title">Contact Me</h2>
             <h3 className="fs-subtitle">Tell us something more about you</h3>
             <input onChange={onchange_listner} type="text" name="firstname" placeholder="First Name" />

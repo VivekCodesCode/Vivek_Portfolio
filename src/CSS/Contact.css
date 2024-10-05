@@ -214,3 +214,21 @@ body {
   }
   @keyframes l11 {100%{transform: translateY(calc(var(--s,1)*0.1%));}}
   
+
+    
+  .loader{
+    position: absolute;
+    z-index: 100;
+ margin-top:18%;
+ margin-left: -5%;
+  }
+
+  @media only screen and (max-width: 40px) {
+    .loader{
+        position: absolute;
+        z-index: 100;
+     margin-top:58%;
+     margin-left: -15%;
+      }
+  }
+ 

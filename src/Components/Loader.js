@@ -1,9 +1,10 @@
 import React from "react";
 function Loader(props) {
     return(
-        <div className="loader" style={{visibility:props.display}}>
+       <center><div className="loader" style={{visibility:props.display}}>
         
         </div>
+        </center> 
     )
 }
 export default Loader;

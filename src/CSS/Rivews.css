@@ -1,0 +1,18 @@
+.rivew_container{
+    width: 70%;
+    margin: auto !important;
+}
+.rivews_head{
+   margin-left: 50% !important;
+}
+
+@media only screen and (max-width: 510px) {
+    .rivew_container{
+        width: 90%;
+        margin: auto !important;
+    }
+  }
+ 
+  .ratings{
+    margin-top: 10px;
+  }

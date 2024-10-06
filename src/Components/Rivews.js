@@ -22,7 +22,7 @@ function WithHeaderAndQuoteExample() {
     const [blur, set_blur] = useState({});
     const [blur2, set_blur2] = useState({ filter: "blur(8px)", pointerEvents: "none" }); // Initial blur applied
     const [rivew_loader,set_rivew_loade]=useState("visible")
-
+    const [average_ratings,set_average_ratings]=useState(1);
     // Effect to load reviews
     useEffect(() => {
         axios.get("https://vivek-portfolio-backend.onrender.com/get_rivews")
@@ -30,6 +30,12 @@ function WithHeaderAndQuoteExample() {
                 set_rivew_data(res.data); // Setting received data to rivew_data
                 set_blur2({}); // Remove blur after data is loaded
                 set_rivew_loade("hidden")
+                let avg_val=0;
+                res.data.map((val,i,arr)=>(
+                    avg_val=avg_val+ val.ratings
+                ))
+                console.log("wejibgfwe",avg_val/res.data.length);
+                set_average_ratings(avg_val/res.data.length)
             });
     }, []);
 
@@ -41,9 +47,10 @@ function WithHeaderAndQuoteExample() {
         set_rivew({ ...rivew, [name]: value });
     }
 
+    
     async function saveChanges(params) {
         set_blur({ filter: "blur(8px)", pointerEvents: "none" });
-        console.log(rivew);
+       // //console.log(rivew);
         await axios.post("https://vivek-portfolio-backend.onrender.com/insert_rivew", rivew);
         window.location.reload();
         setShow(false);
@@ -54,7 +61,9 @@ function WithHeaderAndQuoteExample() {
             <br /><br /><br />
             <button class="button-17" role="button" onClick={handleShow}>Add Review+</button>
             <br /><br />
-
+            <center><h3>Vivek Sharma <Ratings star={average_ratings} /></h3></center>
+            
+            <br /><br />
             <Modal className='rivew_modal' style={blur} show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add Review</Modal.Title>

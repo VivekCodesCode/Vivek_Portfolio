@@ -23,10 +23,11 @@ const Contact = () => {
     setblur({filter:"blur(8px)",pointerEvents:"none"})
     await axios.post("https://vivek-portfolio-backend.onrender.com/insert_data",user_data).then((res)=>{
       set_display("hidden");
+      setblur({});
     })
 
     alert("Submitted!!");
-    navigate("/");
+    // navigate("/");
     
    }
   return (

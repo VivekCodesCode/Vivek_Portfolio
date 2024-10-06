@@ -11,7 +11,7 @@ function Projects() {
   return (
     <>
       <Navbars />
-      <br />
+      <br /><br /><br />
       <Card className='project_cards'>
         <Card.Img className='project_cards_image' height="200px" variant="top" src={pimg} />
         <Card.Body>

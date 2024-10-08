@@ -119,7 +119,7 @@ function WithHeaderAndQuoteExample() {
                 <div style={{ visibility: rivew_loader }} className='loader_rivew'></div>
                 {
                     rivew_data.map((val, i) => {
-                        if(!read_more_rivews&&i>2) return;
+                        if(!read_more_rivews&&i>1) return;
                      return  ( <div key={i}>
                             <Card style={blur2} className='rivew_container'>
                                 <Card.Header>

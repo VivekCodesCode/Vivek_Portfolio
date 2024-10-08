@@ -1,6 +1,7 @@
 .rivew_container{
     width: 70%;
     margin: auto !important;
+  
 }
 .rivews_head{
    margin-left: 50% !important;
@@ -182,5 +183,11 @@
   .loader_rivew{
     margin-top: 10%;
     margin-left: 33%;
+  }
+
+}
+@media only screen and (max-width: 510px) {
+  .button-17{
+    margin-top: 100px !important;
   }
 }

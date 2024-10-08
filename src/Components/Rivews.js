@@ -57,7 +57,7 @@ function WithHeaderAndQuoteExample() {
 
     return (
         <>
-            <br /><br /><br />
+            
             <button class="button-17" role="button" onClick={handleShow}>Add Review+</button>
             <br /><br />
             <center><h3>Vivek Sharma <Ratings star={average_ratings} /></h3></center>

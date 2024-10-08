@@ -1,0 +1,78 @@
+.skill_child{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    height: 228px !important; 
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 5%;
+}
+.skill_child b{
+   font-size: large;
+}
+.skills_container{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 30px;
+    margin: auto;
+}
+.skill_child3{
+    padding-top: 4%;
+  }
+
+  .skill_child img{
+    width: 50%;  
+    align-self: center;
+    margin-left: 25%;
+    height: 80%;
+ }
+ @media only screen and (max-width: 550px) {
+    .skills_container{
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 30px;
+        margin: auto;
+    
+    }
+    .skill_child img{
+        width: 100%;  
+        align-self: center;
+        margin-left: 0%;
+     }
+     .skill_child3{
+        padding-top: 17%;
+      }
+  }
+ 
+
+  
+  /* The image inside the skill_child box */
+  
+  /* Hover effect for the skill_child box */
+  .skill_child:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Hover effect for the image inside skill_child */
+  
+  /* Optional: Add some text inside the skill_child box */
+  .skill_child .text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .skill_child:hover .text {
+    opacity: 1;
+  }
+  

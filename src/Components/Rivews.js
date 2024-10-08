@@ -3,7 +3,6 @@ import Ratings from "./Ratings"
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import "../CSS/Rivews.css"
-
 import { useEffect, useState } from 'react';
 import profile from "../Images/profile.png"
 import { Button } from 'react-bootstrap';
@@ -17,12 +16,12 @@ function WithHeaderAndQuoteExample() {
         ratings: "",
         message: "",
     });
-    
+
     const [show, setShow] = useState(false);
     const [blur, set_blur] = useState({});
     const [blur2, set_blur2] = useState({ filter: "blur(8px)", pointerEvents: "none" }); // Initial blur applied
-    const [rivew_loader,set_rivew_loade]=useState("visible")
-    const [average_ratings,set_average_ratings]=useState(1);
+    const [rivew_loader, set_rivew_loade] = useState("visible")
+    const [average_ratings, set_average_ratings] = useState(1);
     // Effect to load reviews
     useEffect(() => {
         axios.get("https://vivek-portfolio-backend.onrender.com/get_rivews")
@@ -30,12 +29,12 @@ function WithHeaderAndQuoteExample() {
                 set_rivew_data(res.data); // Setting received data to rivew_data
                 set_blur2({}); // Remove blur after data is loaded
                 set_rivew_loade("hidden")
-                let avg_val=0;
-                res.data.map((val,i,arr)=>(
-                    avg_val=avg_val+ val.ratings
+                let avg_val = 0;
+                res.data.map((val, i, arr) => (
+                    avg_val = avg_val + val.ratings
                 ))
-                console.log("wejibgfwe",avg_val/res.data.length);
-                set_average_ratings(avg_val/res.data.length)
+                console.log("wejibgfwe", avg_val / res.data.length);
+                set_average_ratings(avg_val / res.data.length)
             });
     }, []);
 
@@ -47,10 +46,10 @@ function WithHeaderAndQuoteExample() {
         set_rivew({ ...rivew, [name]: value });
     }
 
-    
+
     async function saveChanges(params) {
         set_blur({ filter: "blur(8px)", pointerEvents: "none" });
-       // //console.log(rivew);
+        // //console.log(rivew);
         await axios.post("https://vivek-portfolio-backend.onrender.com/insert_rivew", rivew);
         window.location.reload();
         setShow(false);
@@ -62,7 +61,7 @@ function WithHeaderAndQuoteExample() {
             <button class="button-17" role="button" onClick={handleShow}>Add Review+</button>
             <br /><br />
             <center><h3>Vivek Sharma <Ratings star={average_ratings} /></h3></center>
-            
+
             <br /><br />
             <Modal className='rivew_modal' style={blur} show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -116,30 +115,30 @@ function WithHeaderAndQuoteExample() {
 
             {/* Rendering the review data */}
             <div className='rivew_container'>
-                <div style={{visibility:rivew_loader}} className='loader_rivew'></div>
-            {
-                rivew_data.map((val, i) => (
-                    <div key={i}>
-                        <Card style={blur2} className='rivew_container'>
-                            <Card.Header>
-                                <img style={{ borderRadius: "14px" }} height="24px" width="29px" src={profile} alt="profile" /> 
-                                {val.name}
-                            </Card.Header>
-                            <Card.Body>
-                           
-                                <blockquote className="blockquote mb-0">
-                                    <p>{val.title}</p>
-                                    <footer className="blockquote-footer">
-                                        {val.message} <cite title="Source Title">{val.ratings}</cite>
-                                        <Ratings star={Number(val.ratings)} />
-                                    </footer>
-                                </blockquote>
-                            </Card.Body>
-                        </Card>
-                        <br /><br />
-                    </div>
-                ))
-            }
+                <div style={{ visibility: rivew_loader }} className='loader_rivew'></div>
+                {
+                    rivew_data.map((val, i) => (
+                        <div key={i}>
+                            <Card style={blur2} className='rivew_container'>
+                                <Card.Header>
+                                    <img style={{ borderRadius: "14px" }} height="24px" width="29px" src={profile} alt="profile" />
+                                    {val.name}
+                                </Card.Header>
+                                <Card.Body>
+
+                                    <blockquote className="blockquote mb-0">
+                                        <p>{val.title}</p>
+                                        <footer className="blockquote-footer">
+                                            {val.message} <cite title="Source Title">{val.ratings}</cite>
+                                            <Ratings star={Number(val.ratings)} />
+                                        </footer>
+                                    </blockquote>
+                                </Card.Body>
+                            </Card>
+                            <br /><br />
+                        </div>
+                    ))
+                }
             </div>
 
             <br /><br />

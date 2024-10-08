@@ -156,7 +156,7 @@
 }
 .dark_mode{
   position: fixed !important;
-  z-index: 10000000000000000000000000000000;
+  z-index: 10000000 !important;
   height: 70px;
   width: 70px;
   border-radius: 40px;

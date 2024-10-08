@@ -61,7 +61,7 @@ function WithHeaderAndQuoteExample() {
             
             <button class="button-17" role="button" onClick={handleShow}>Add Review+</button>
             <br /><br />
-            <center><h3>Vivek Sharma <Ratings star={average_ratings} /></h3></center>
+            <center><h3>Vivek's Avg Rating<Ratings star={average_ratings} /></h3></center>
 
             <br /><br />
             <Modal className='rivew_modal' style={blur} show={show} onHide={handleClose}>
@@ -132,7 +132,7 @@ function WithHeaderAndQuoteExample() {
                                         <p>{val.title}</p>
                                         <footer className="blockquote-footer">
                                             {val.message} <cite title="Source Title">{val.ratings}</cite>
-                                            <Ratings star={Number(val.ratings)} />
+                                            <Ratings star={Number.parseFloat(val.ratings)} />
                                         </footer>
                                     </blockquote>
                                 </Card.Body>
@@ -153,7 +153,7 @@ function WithHeaderAndQuoteExample() {
                 <center style={{cursor:"pointer"}} onClick={()=>{set_read_more_rivews(!read_more_rivews)}}>{read_more_rivews?"Read Less":"Read More"}</center>
             </div>
 
-            <br /><br />
+            
         </>
     );
 }

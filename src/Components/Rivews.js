@@ -22,6 +22,7 @@ function WithHeaderAndQuoteExample() {
     const [blur2, set_blur2] = useState({ filter: "blur(8px)", pointerEvents: "none" }); // Initial blur applied
     const [rivew_loader, set_rivew_loade] = useState("visible")
     const [average_ratings, set_average_ratings] = useState(1);
+    const [read_more_rivews,set_read_more_rivews]=useState(false);
     // Effect to load reviews
     useEffect(() => {
         axios.get("https://vivek-portfolio-backend.onrender.com/get_rivews")
@@ -117,8 +118,9 @@ function WithHeaderAndQuoteExample() {
             <div className='rivew_container'>
                 <div style={{ visibility: rivew_loader }} className='loader_rivew'></div>
                 {
-                    rivew_data.map((val, i) => (
-                        <div key={i}>
+                    rivew_data.map((val, i) => {
+                        if(!read_more_rivews&&i>2) return;
+                     return  ( <div key={i}>
                             <Card style={blur2} className='rivew_container'>
                                 <Card.Header>
                                     <img style={{ borderRadius: "14px" }} height="24px" width="29px" src={profile} alt="profile" />
@@ -136,9 +138,19 @@ function WithHeaderAndQuoteExample() {
                                 </Card.Body>
                             </Card>
                             <br /><br />
-                        </div>
-                    ))
+                            {
+                                
+                            }
+                        </div>)
+                    }
+                
+                
+                
+                
+                
+                )
                 }
+                <center style={{cursor:"pointer"}} onClick={()=>{set_read_more_rivews(!read_more_rivews)}}>{read_more_rivews?"Read Less":"Read More"}</center>
             </div>
 
             <br /><br />

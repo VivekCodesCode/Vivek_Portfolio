@@ -154,3 +154,17 @@
   font-size: 30px;
   font-family:'Times New Roman', Times, serif;
 }
+.dark_mode{
+  position: fixed !important;
+  z-index: 10000000000000000000000000000000;
+  height: 70px;
+  width: 70px;
+  border-radius: 40px;
+  margin-top: 300px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* .all_portfolio{
+  background-color: #3c4043;
+} */
+ 

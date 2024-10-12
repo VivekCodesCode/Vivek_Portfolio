@@ -21,8 +21,8 @@ function WithHeaderAndQuoteExample() {
     const [blur, set_blur] = useState({});
     const [blur2, set_blur2] = useState({ filter: "blur(8px)", pointerEvents: "none" }); // Initial blur applied
     const [rivew_loader, set_rivew_loade] = useState("visible")
-    const [average_ratings, set_average_ratings] = useState(1);
-    const [read_more_rivews,set_read_more_rivews]=useState(false);
+    const [average_ratings, set_average_ratings] = useState(0);
+    const [read_more_rivews, set_read_more_rivews] = useState(false);
     // Effect to load reviews
     useEffect(() => {
         axios.get("https://vivek-portfolio-backend.onrender.com/get_rivews")
@@ -58,7 +58,7 @@ function WithHeaderAndQuoteExample() {
 
     return (
         <>
-            
+
             <button class="button-17" role="button" onClick={handleShow}>Add Review+</button>
             <br /><br />
             <center><h3>Vivek's Avg Rating<Ratings star={average_ratings} /></h3></center>
@@ -119,8 +119,8 @@ function WithHeaderAndQuoteExample() {
                 <div style={{ visibility: rivew_loader }} className='loader_rivew'></div>
                 {
                     rivew_data.map((val, i) => {
-                        if(!read_more_rivews&&i>1) return;
-                     return  ( <div key={i}>
+                        if (!read_more_rivews && i > 1) return;
+                        return (<div key={i}>
                             <Card style={blur2} className='rivew_container'>
                                 <Card.Header>
                                     <img style={{ borderRadius: "14px" }} height="24px" width="29px" src={profile} alt="profile" />
@@ -139,21 +139,21 @@ function WithHeaderAndQuoteExample() {
                             </Card>
                             <br /><br />
                             {
-                                
+
                             }
                         </div>)
                     }
-                
-                
-                
-                
-                
-                )
+
+
+
+
+
+                    )
                 }
-                <center style={{cursor:"pointer"}} onClick={()=>{set_read_more_rivews(!read_more_rivews)}}>{read_more_rivews?"Read Less":"Read More"}</center>
+                <center style={{ cursor: "pointer" }} onClick={() => { set_read_more_rivews(!read_more_rivews) }}>{read_more_rivews ? "Read Less" : "Read More"}</center>
             </div>
 
-            
+
         </>
     );
 }

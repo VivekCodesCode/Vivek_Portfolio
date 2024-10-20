@@ -6,31 +6,40 @@ import java from "../Images/java.png"
 import git from "../Images/git.png"
 import cplus from "../Images/cplus.png"
 import  vscode from "../Images/vscode.png"
+import { motion } from "framer-motion";
 function Skills(params) {
     return(
         <>
-          <div className="skills_container">
-            <div className="skill_child">
+          <motion.div
+           initial={{ scale: 0 }}
+           animate={{ rotate: 360, scale: 1 }}
+           transition={{
+             type: "spring",
+             stiffness: 260,
+             damping: 20
+           }}
+          className="skills_container">
+            <motion.div className="skill_child">
                 <img  src={ricon}/>
                <center> <b>React JS</b></center>
-            </div>
-            <div className="skill_child">
+            </motion.div>
+            <motion.div className="skill_child">
                 <img  src={njs}/>
                 <center> <b>Node JS</b></center>
-            </div><div className="skill_child skill_child3">
+            </motion.div><motion.div className="skill_child skill_child3">
                 <img  src={java}/>
                 <center> <b>Java</b></center>
-            </div><div className="skill_child">
+            </motion.div><motion.div className="skill_child">
                 <img  src={vscode}/>
                 <center> <b>VS Code</b></center>
-            </div><div className="skill_child">
+            </motion.div><motion.div className="skill_child">
                 <img  src={git}/>
                 <center> <b>Git Hub</b></center>
-            </div><div className="skill_child">
+            </motion.div><motion.div className="skill_child">
                 <img  src={cplus}/>
                 <center> <b>C++ Programming</b></center>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </>
     )
 }

@@ -18,7 +18,6 @@ function Home(params) {
 <br/><br/><br/>
 <Skills/>
 <Rivews/>
-
 </>
     );
 }

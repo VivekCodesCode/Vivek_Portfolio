@@ -24,7 +24,7 @@ function Projects() {
             <center>
               <button
                 className="button-69"
-                onClick={() => window.open("https://drive.google.com/file/d/1U_4ZjMWq0ycLrDyMDXUdjJr94t_pOrCu/view", "_blank")}
+                // onClick={() => window.open("https://drive.google.com/file/d/1U_4ZjMWq0ycLrDyMDXUdjJr94t_pOrCu/view", "_blank")}
                 role="button"
               >
                 Watch Video
@@ -48,7 +48,7 @@ function Projects() {
             <center>
               <button
                 className="button-69"
-                onClick={() => window.open("https://drive.google.com/file/d/1U_4ZjMWq0ycLrDyMDXUdjJr94t_pOrCu/view", "_blank")}
+                // onClick={() => window.open("https://drive.google.com/file/d/1U_4ZjMWq0ycLrDyMDXUdjJr94t_pOrCu/view", "_blank")}
                 role="button"
               >
                 Watch Video

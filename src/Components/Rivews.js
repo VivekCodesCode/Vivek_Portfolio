@@ -61,7 +61,7 @@ function WithHeaderAndQuoteExample() {
 
             <button class="button-17" role="button" onClick={handleShow}>Add Review+</button>
             <br /><br />
-            <center><h3>Vivek's Avg Rating<Ratings star={average_ratings} /></h3></center>
+            <center><h3 className='avg_rating_head'>Vivek's Avg Rating<Ratings star={average_ratings} /></h3></center>
 
             <br /><br />
             <Modal className='rivew_modal' style={blur} show={show} onHide={handleClose}>

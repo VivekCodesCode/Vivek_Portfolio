@@ -8,35 +8,42 @@ import { Link } from 'react-router-dom';
 function BrandExample() {
   return (
     <>
-      <Navbar className="navbar_container" fixed="top">
-        <Container className='child_container'>
-          <Navbar.Brand href="#home" className='me-auto'>
-            <Nav.Link>
+      {/* Added expand="lg" to make it responsive */}
+      <Navbar className="navbar_container" fixed="top" expand="lg">
+        <Container className="child_container">
+          {/* Brand section with logo and name */}
+          <Navbar.Brand className="me-auto">
+            <Link to="/" style={{ textDecoration: "none" }}>
               <div>
                 <img
-                  alt=""
+                  alt="Vivek Sharma Logo"
                   src={vs_icon}
                   width="48"
                   height="35"
                   className="d-inline-block align-top"
                   style={{ borderRadius: "20px" }}
                 />{' '}
-                <span style={{ color: "white" }} className='viveks'>VivekSharma</span>
+                <span style={{ color: "white" }} className="viveks">VivekSharma</span>
               </div>
-            </Nav.Link>
+            </Link>
           </Navbar.Brand>
-          {/* Aligning the Nav Links to the right */}
-          <Nav className="ms-auto navbar_content justify-content-end">
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <Nav.Link className='navbar_content' style={{ color: "white", fontFamily: "initial" }} href="#about">Home</Nav.Link>
-            </Link>
-            <Link to="/Projects" style={{ textDecoration: "none" }}>
-              <Nav.Link className='navbar_content' style={{ color: "white", fontFamily: "initial" }} href="#projects">Projects</Nav.Link>
-            </Link>
-            <Link to="/Contact" style={{ textDecoration: "none" }}>
-              <Nav.Link className='navbar_content' href="#contact" style={{ textDecoration: "none", color: "whitesmoke", fontFamily: "initial" }}>Contact</Nav.Link>
-            </Link>
-          </Nav>
+
+          {/* Navbar toggle button for small screens */}
+          <Navbar.Toggle  aria-controls="basic-navbar-nav"className='custom-toggler' />
+          <Navbar.Collapse id="basic-navbar-nav">
+            {/* Aligning the Nav Links to the right */}
+            <Nav className="ms-auto navbar_content">
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Nav.Link as="span" className="navbar_content" style={{ color: "white", fontFamily: "initial" }}>Home</Nav.Link>
+              </Link>
+              <Link to="/Projects" style={{ textDecoration: "none" }}>
+                <Nav.Link as="span" className="navbar_content" style={{ color: "white", fontFamily: "initial" }}>Projects</Nav.Link>
+              </Link>
+              <Link to="/Contact" style={{ textDecoration: "none" }}>
+                <Nav.Link as="span" className="navbar_content" style={{ color: "whitesmoke", fontFamily: "initial" }}>Contact</Nav.Link>
+              </Link>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </>

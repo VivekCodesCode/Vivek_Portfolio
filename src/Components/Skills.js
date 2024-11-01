@@ -11,12 +11,12 @@ import { motion } from "framer-motion";
 function Skills() {
     return (
         <>
-          <motion.div         
+          <div         
             
             viewport={{ once: true }} 
             className="skills_container"
           >
-            <motion.div className="skill_child"
+            <div className="skill_child"
             initial={{z:200,x:-100, scale: 0, opacity: 0 }}
             whileInView={{x:0,z:0, opacity: 1, scale: 1, }}
             transition={{
@@ -33,9 +33,9 @@ whileTap={{ scale: 0.2 }}
                 
                 <img src={ricon} alt="React JS" />
                <center><b>React JS</b></center>
-            </motion.div>
+            </div>
 
-            <motion.div className="skill_child"
+            <div className="skill_child"
             initial={{z:200,x:-100, scale: 0, opacity: 0 }}
             whileInView={{x:0,z:0, opacity: 1, scale: 1, }}
             transition={{
@@ -49,9 +49,9 @@ whileTap={{ scale: 0.2 }}
             >
                 <img src={njs} alt="Node JS" />
                 <center><b>Node JS</b></center>
-            </motion.div>
+            </div>
 
-            <motion.div className="skill_child"
+            <div className="skill_child"
             initial={{z:200,x:-100, scale: 0, opacity: 0 }}
             whileInView={{x:0,z:0, opacity: 1, scale: 1, }}
             transition={{
@@ -65,9 +65,9 @@ whileTap={{ scale: 0.2 }}
             >
                 <img src={java} alt="Java" />
                 <center><b>Java</b></center>
-            </motion.div>
+            </div>
 
-            <motion.div className="skill_child"
+            <div className="skill_child"
             initial={{z:200,x:-100, scale: 0, opacity: 0 }}
             whileInView={{x:0,z:0, opacity: 1, scale: 1, }}
             transition={{
@@ -81,9 +81,9 @@ whileTap={{ scale: 0.2 }}
             >
                 <img src={vscode} alt="VS Code" />
                 <center><b>VS Code</b></center>
-            </motion.div>
+            </div>
 
-            <motion.div className="skill_child"
+            <div className="skill_child"
             initial={{z:200,x:-100, scale: 0, opacity: 0 }}
             whileInView={{x:0,z:0, opacity: 1, scale: 1, }}
             transition={{
@@ -97,9 +97,9 @@ whileTap={{ scale: 0.2 }}
             >
                 <img src={git} alt="Git" />
                 <center><b>Git Hub</b></center>
-            </motion.div>
+            </div>
 
-            <motion.div className="skill_child"
+            <div className="skill_child"
             initial={{z:200,x:-100, scale: 0, opacity: 0 }}
             whileInView={{x:0,z:0, opacity: 1, scale: 1, }}
             transition={{
@@ -113,8 +113,8 @@ whileTap={{ scale: 0.2 }}
             >
                 <img src={cplus} alt="C++ Programming" />
                 <center><b>C++ Programming</b></center>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </>
     );
 }
